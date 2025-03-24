@@ -3,8 +3,8 @@
 namespace JiraCloud\Issue;
 
 use DateTimeInterface;
-use DH\Adf\Node\Block\Document;
-use DH\Adf\Node\Node;
+use InvalidArgumentException;
+use JiraCloud\ADF\AtlassianDocumentFormat;
 
 class Comment implements \JsonSerializable
 {
@@ -16,7 +16,7 @@ class Comment implements \JsonSerializable
 
     public Reporter $author;
 
-    public string $body;
+    public AtlassianDocumentFormat|null $body = null;
 
     public Reporter $updateAuthor;
 
@@ -34,16 +34,16 @@ class Comment implements \JsonSerializable
      * Comment constructor.
      */
     public function __construct(
-        string             $self = '',
-        string             $id = '',
-        ?Reporter          $author = null,
-        string             $body = '',
-        ?Reporter          $updateAuthor = null,
-        ?DateTimeInterface $created = null,
-        ?DateTimeInterface $updated = null,
-        ?Visibility        $visibility = null,
-        bool               $jsdPublic = false,
-        string             $renderedBody = ''
+        string                   $self = '',
+        string                   $id = '',
+        ?Reporter                $author = null,
+        ?AtlassianDocumentFormat $body = null,
+        ?Reporter                $updateAuthor = null,
+        ?DateTimeInterface       $created = null,
+        ?DateTimeInterface       $updated = null,
+        ?Visibility              $visibility = null,
+        bool                     $jsdPublic = false,
+        string                   $renderedBody = ''
     )
     {
         $this->self         = $self;
@@ -65,16 +65,17 @@ class Comment implements \JsonSerializable
      *
      * @return $this
      */
-    public function setBody(string $body): static
+    public function setBody(mixed $body): static
     {
-        $this->body = $body;
-
-        return $this;
-    }
-
-    public function setBodyByAtlassianDocumentFormat(Document|Node $body): static
-    {
-        $this->body = $body->jsonSerialize();
+        if ($body instanceof AtlassianDocumentFormat) {
+            $this->body = $body;
+        } else if (is_array($body)) {
+            $this->body = AtlassianDocumentFormat::fromArray($body);
+        } else if ($body instanceof \stdClass) {
+            $this->body = AtlassianDocumentFormat::fromArray((array)$body);
+        } else {
+            throw new InvalidArgumentException('Unsupported type for comment body');
+        }
 
         return $this;
     }
