@@ -1,0 +1,496 @@
+{
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations,customfield_10034.requestTypePractice,customfield_10020.properties,customfield_10019.properties",
+    "id": "85481",
+    "self": "https://lulububu.atlassian.net/rest/api/3/issue/85481",
+    "key": "ROBOTHOMAS-1015",
+    "fields": {
+        "statuscategorychangedate": "2025-03-19T17:25:45.778+0100",
+        "parent": {
+            "id": "85466",
+            "key": "ROBOTHOMAS-1011",
+            "self": "https://lulububu.atlassian.net/rest/api/3/issue/85466",
+            "fields": {
+                "summary": "Webhook-Support in lesstif/php-jira-rest-client einbauen",
+                "status": {
+                    "self": "https://lulububu.atlassian.net/rest/api/3/status/3",
+                    "description": "This issue is being actively worked on at the moment by the assignee.",
+                    "iconUrl": "https://lulububu.atlassian.net/images/icons/statuses/inprogress.png",
+                    "name": "In Progress",
+                    "id": "3",
+                    "statusCategory": {
+                        "self": "https://lulububu.atlassian.net/rest/api/3/statuscategory/4",
+                        "id": 4,
+                        "key": "indeterminate",
+                        "colorName": "yellow",
+                        "name": "In Progress"
+                    }
+                },
+                "priority": {
+                    "self": "https://lulububu.atlassian.net/rest/api/3/priority/3",
+                    "iconUrl": "https://lulububu.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "issuetype": {
+                    "self": "https://lulububu.atlassian.net/rest/api/3/issuetype/10000",
+                    "id": "10000",
+                    "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://lulububu.atlassian.net/images/icons/issuetypes/epic.svg",
+                    "name": "Epic",
+                    "subtask": false,
+                    "hierarchyLevel": 1
+                }
+            }
+        },
+        "customfield_10070": null,
+        "customfield_10071": null,
+        "customfield_10072": "2025-03-11",
+        "customfield_10073": null,
+        "customfield_10074": null,
+        "customfield_10075": null,
+        "customfield_10076": null,
+        "customfield_10077": null,
+        "fixVersions": [],
+        "customfield_10078": null,
+        "customfield_10079": null,
+        "resolution": null,
+        "lastViewed": "2025-03-19T17:25:33.066+0100",
+        "customfield_10060": null,
+        "customfield_10061": null,
+        "customfield_10062": null,
+        "customfield_10063": null,
+        "customfield_10065": null,
+        "customfield_10066": null,
+        "priority": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://lulububu.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+        },
+        "customfield_10067": null,
+        "customfield_10100": null,
+        "customfield_10068": null,
+        "customfield_10069": null,
+        "labels": [],
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [],
+        "issuelinks": [
+            {
+                "id": "169064",
+                "self": "https://lulububu.atlassian.net/rest/api/3/issueLink/169064",
+                "type": {
+                    "id": "10003",
+                    "name": "1. Relates",
+                    "inward": "relates to",
+                    "outward": "relates to",
+                    "self": "https://lulububu.atlassian.net/rest/api/3/issueLinkType/10003"
+                },
+                "outwardIssue": {
+                    "id": "85466",
+                    "key": "ROBOTHOMAS-1011",
+                    "self": "https://lulububu.atlassian.net/rest/api/3/issue/85466",
+                    "fields": {
+                        "summary": "Webhook-Support in lesstif/php-jira-rest-client einbauen",
+                        "status": {
+                            "self": "https://lulububu.atlassian.net/rest/api/3/status/3",
+                            "description": "This issue is being actively worked on at the moment by the assignee.",
+                            "iconUrl": "https://lulububu.atlassian.net/images/icons/statuses/inprogress.png",
+                            "name": "In Progress",
+                            "id": "3",
+                            "statusCategory": {
+                                "self": "https://lulububu.atlassian.net/rest/api/3/statuscategory/4",
+                                "id": 4,
+                                "key": "indeterminate",
+                                "colorName": "yellow",
+                                "name": "In Progress"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://lulububu.atlassian.net/rest/api/3/priority/3",
+                            "iconUrl": "https://lulububu.atlassian.net/images/icons/priorities/medium.svg",
+                            "name": "Medium",
+                            "id": "3"
+                        },
+                        "issuetype": {
+                            "self": "https://lulububu.atlassian.net/rest/api/3/issuetype/10000",
+                            "id": "10000",
+                            "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+                            "iconUrl": "https://lulububu.atlassian.net/images/icons/issuetypes/epic.svg",
+                            "name": "Epic",
+                            "subtask": false,
+                            "hierarchyLevel": 1
+                        }
+                    }
+                }
+            }
+        ],
+        "assignee": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/user?accountId=712020%3Acc533908-978d-460d-b145-736e2a42beb8",
+            "accountId": "712020:cc533908-978d-460d-b145-736e2a42beb8",
+            "emailAddress": "philippos@lulububu.de",
+            "avatarUrls": {
+                "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:cc533908-978d-460d-b145-736e2a42beb8/662a8727-0d2b-40ad-b928-2c770e9cbc6e/48",
+                "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:cc533908-978d-460d-b145-736e2a42beb8/662a8727-0d2b-40ad-b928-2c770e9cbc6e/24",
+                "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:cc533908-978d-460d-b145-736e2a42beb8/662a8727-0d2b-40ad-b928-2c770e9cbc6e/16",
+                "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:cc533908-978d-460d-b145-736e2a42beb8/662a8727-0d2b-40ad-b928-2c770e9cbc6e/32"
+            },
+            "displayName": "Philippos Tiropoulos",
+            "active": true,
+            "timeZone": "Europe/Berlin",
+            "accountType": "atlassian"
+        },
+        "status": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/status/3",
+            "description": "This issue is being actively worked on at the moment by the assignee.",
+            "iconUrl": "https://lulububu.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In Progress",
+            "id": "3",
+            "statusCategory": {
+                "self": "https://lulububu.atlassian.net/rest/api/3/statuscategory/4",
+                "id": 4,
+                "key": "indeterminate",
+                "colorName": "yellow",
+                "name": "In Progress"
+            }
+        },
+        "components": [],
+        "customfield_10050": null,
+        "customfield_10051": null,
+        "customfield_10053": null,
+        "customfield_10054": null,
+        "customfield_10055": null,
+        "customfield_10056": null,
+        "customfield_10057": null,
+        "customfield_10058": null,
+        "customfield_10059": null,
+        "aggregatetimeestimate": null,
+        "creator": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/user?accountId=61079d428c15ca006f5b26a4",
+            "accountId": "61079d428c15ca006f5b26a4",
+            "avatarUrls": {
+                "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61079d428c15ca006f5b26a4/94db7e4c-12dc-455f-b5f5-183d8ab1b229/48",
+                "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61079d428c15ca006f5b26a4/94db7e4c-12dc-455f-b5f5-183d8ab1b229/24",
+                "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61079d428c15ca006f5b26a4/94db7e4c-12dc-455f-b5f5-183d8ab1b229/16",
+                "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61079d428c15ca006f5b26a4/94db7e4c-12dc-455f-b5f5-183d8ab1b229/32"
+            },
+            "displayName": "Jonas Graf",
+            "active": true,
+            "timeZone": "Europe/Berlin",
+            "accountType": "atlassian"
+        },
+        "subtasks": [],
+        "customfield_10040": null,
+        "customfield_10041": null,
+        "reporter": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/user?accountId=61079d428c15ca006f5b26a4",
+            "accountId": "61079d428c15ca006f5b26a4",
+            "avatarUrls": {
+                "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61079d428c15ca006f5b26a4/94db7e4c-12dc-455f-b5f5-183d8ab1b229/48",
+                "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61079d428c15ca006f5b26a4/94db7e4c-12dc-455f-b5f5-183d8ab1b229/24",
+                "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61079d428c15ca006f5b26a4/94db7e4c-12dc-455f-b5f5-183d8ab1b229/16",
+                "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61079d428c15ca006f5b26a4/94db7e4c-12dc-455f-b5f5-183d8ab1b229/32"
+            },
+            "displayName": "Jonas Graf",
+            "active": true,
+            "timeZone": "Europe/Berlin",
+            "accountType": "atlassian"
+        },
+        "customfield_10043": null,
+        "customfield_10044": null,
+        "aggregateprogress": {
+            "progress": 0,
+            "total": 0
+        },
+        "customfield_10045": null,
+        "customfield_10046": null,
+        "customfield_10047": null,
+        "customfield_10038": null,
+        "customfield_10039": null,
+        "progress": {
+            "progress": 0,
+            "total": 0
+        },
+        "votes": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/issue/ROBOTHOMAS-1015/votes",
+            "votes": 0,
+            "hasVoted": false
+        },
+        "worklog": {
+            "startAt": 0,
+            "maxResults": 20,
+            "total": 0,
+            "worklogs": []
+        },
+        "issuetype": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/issuetype/10002",
+            "id": "10002",
+            "description": "A task that needs to be done.",
+            "iconUrl": "https://lulububu.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+            "name": "Task",
+            "subtask": false,
+            "avatarId": 10318,
+            "hierarchyLevel": 0
+        },
+        "timespent": null,
+        "project": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/project/10196",
+            "id": "10196",
+            "key": "ROBOTHOMAS",
+            "name": "Robothomas",
+            "projectTypeKey": "software",
+            "simplified": false,
+            "avatarUrls": {
+                "48x48": "https://lulububu.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10772",
+                "24x24": "https://lulububu.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10772?size=small",
+                "16x16": "https://lulububu.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10772?size=xsmall",
+                "32x32": "https://lulububu.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10772?size=medium"
+            },
+            "projectCategory": {
+                "self": "https://lulububu.atlassian.net/rest/api/3/projectCategory/10000",
+                "id": "10000",
+                "description": "",
+                "name": "Software"
+            }
+        },
+        "customfield_10032": null,
+        "customfield_10033": null,
+        "aggregatetimespent": null,
+        "customfield_10034": null,
+        "customfield_10035": [],
+        "customfield_10036": null,
+        "customfield_10037": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "watches": {
+            "self": "https://lulububu.atlassian.net/rest/api/3/issue/ROBOTHOMAS-1015/watchers",
+            "watchCount": 3,
+            "isWatching": false
+        },
+        "created": "2025-03-11T10:31:13.960+0100",
+        "customfield_10020": null,
+        "customfield_10019": null,
+        "updated": "2025-03-19T17:25:45.778+0100",
+        "customfield_10090": null,
+        "customfield_10091": null,
+        "customfield_10092": null,
+        "customfield_10094": null,
+        "timeoriginalestimate": null,
+        "customfield_10096": null,
+        "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Im "
+                        },
+                        {
+                            "type": "text",
+                            "text": "IssueService",
+                            "marks": [
+                                {
+                                    "type": "code"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": " gibt es schon eine Methode, um von "
+                        },
+                        {
+                            "type": "text",
+                            "text": "$json",
+                            "marks": [
+                                {
+                                    "type": "code"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "  ein Issue zu mappen."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "content": []
+                },
+                {
+                    "type": "codeBlock",
+                    "attrs": {},
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "class IssueService extends \\JiraRestApi\\JiraClient\n{\n    private $uri = '/issue';\n\n    /**\n     * @param object $json\n     *\n     * @throws \\JsonMapper_Exception\n     *\n     * @return Issue\n     */\n    public function getIssueFromJSON($json): Issue\n    {\n        $issue = $this->json_mapper->map(\n            $json,\n            new Issue()\n        );\n\n        return $issue;\n    }"
+                        }
+                    ]
+                }
+            ]
+        },
+        "customfield_10097": null,
+        "customfield_10010": null,
+        "customfield_10098": null,
+        "customfield_10011": "1|i0a8ez:",
+        "customfield_10099": null,
+        "customfield_10012": "2025-03-11T10:31:18.169+0100",
+        "customfield_10013": null,
+        "timetracking": {},
+        "security": null,
+        "customfield_10008": "ROBOTHOMAS-1011",
+        "customfield_10009": {
+            "hasEpicLinkFieldDependency": false,
+            "showField": false,
+            "nonEditableReason": {
+                "reason": "EPIC_LINK_SHOULD_BE_USED",
+                "message": "To set an epic as the parent, use the epic link instead"
+            }
+        },
+        "attachment": [],
+        "summary": "Prüfen: Kann man getIssueFromJSON von php-jira-rest-client nutzen",
+        "customfield_10080": null,
+        "customfield_10081": null,
+        "customfield_10082": null,
+        "customfield_10085": null,
+        "customfield_10087": null,
+        "customfield_10088": null,
+        "customfield_10000": "{}",
+        "customfield_10001": null,
+        "customfield_10089": null,
+        "customfield_10004": [],
+        "environment": null,
+        "duedate": null,
+        "comment": {
+            "comments": [
+                {
+                    "self": "https://lulububu.atlassian.net/rest/api/3/issue/85481/comment/343409",
+                    "id": "343409",
+                    "author": {
+                        "self": "https://lulububu.atlassian.net/rest/api/3/user?accountId=61c59e2abce5e00069a156fd",
+                        "accountId": "61c59e2abce5e00069a156fd",
+                        "avatarUrls": {
+                            "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/48",
+                            "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/24",
+                            "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/16",
+                            "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/32"
+                        },
+                        "displayName": "Robothomas",
+                        "active": true,
+                        "timeZone": "Europe/Berlin",
+                        "accountType": "atlassian"
+                    },
+                    "body": {
+                        "type": "doc",
+                        "version": 1,
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "Dieses Ticket ist jetzt im Backlog, da der Epic ("
+                                    },
+                                    {
+                                        "type": "inlineCard",
+                                        "attrs": {
+                                            "url": "https://lulububu.atlassian.net/browse/ROBOTHOMAS-1011"
+                                        }
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": ") dazu noch nicht in progress ist."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "updateAuthor": {
+                        "self": "https://lulububu.atlassian.net/rest/api/3/user?accountId=61c59e2abce5e00069a156fd",
+                        "accountId": "61c59e2abce5e00069a156fd",
+                        "avatarUrls": {
+                            "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/48",
+                            "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/24",
+                            "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/16",
+                            "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/32"
+                        },
+                        "displayName": "Robothomas",
+                        "active": true,
+                        "timeZone": "Europe/Berlin",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2025-03-11T10:31:18.169+0100",
+                    "updated": "2025-03-11T10:31:18.169+0100",
+                    "jsdPublic": true
+                },
+                {
+                    "self": "https://lulububu.atlassian.net/rest/api/3/issue/85481/comment/345726",
+                    "id": "345726",
+                    "author": {
+                        "self": "https://lulububu.atlassian.net/rest/api/3/user?accountId=61c59e2abce5e00069a156fd",
+                        "accountId": "61c59e2abce5e00069a156fd",
+                        "avatarUrls": {
+                            "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/48",
+                            "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/24",
+                            "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/16",
+                            "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/32"
+                        },
+                        "displayName": "Robothomas",
+                        "active": true,
+                        "timeZone": "Europe/Berlin",
+                        "accountType": "atlassian"
+                    },
+                    "body": {
+                        "type": "doc",
+                        "version": 1,
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "Dieses Ticket ist jetzt nicht mehr im Backlog weil der umschließende Epic ("
+                                    },
+                                    {
+                                        "type": "inlineCard",
+                                        "attrs": {
+                                            "url": "https://lulububu.atlassian.net/browse/ROBOTHOMAS-1011"
+                                        }
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": ") auf \"In progress\" gestellt wurde."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "updateAuthor": {
+                        "self": "https://lulububu.atlassian.net/rest/api/3/user?accountId=61c59e2abce5e00069a156fd",
+                        "accountId": "61c59e2abce5e00069a156fd",
+                        "avatarUrls": {
+                            "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/48",
+                            "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/24",
+                            "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/16",
+                            "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/61c59e2abce5e00069a156fd/c030dfed-9eee-41db-bacf-10c1c4f7b58c/32"
+                        },
+                        "displayName": "Robothomas",
+                        "active": true,
+                        "timeZone": "Europe/Berlin",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2025-03-19T13:54:59.936+0100",
+                    "updated": "2025-03-19T13:54:59.936+0100",
+                    "jsdPublic": true
+                }
+            ],
+            "self": "https://lulububu.atlassian.net/rest/api/3/issue/85481/comment",
+            "maxResults": 2,
+            "total": 2,
+            "startAt": 0
+        }
+    }
+}
