@@ -58,6 +58,16 @@ class Comment implements \JsonSerializable
         $this->renderedBody = $renderedBody;
     }
 
+    public function getAuthor(): ?Reporter
+    {
+        return $this->author;
+    }
+
+    public function getAuthorAccountId(): ?string
+    {
+        return $this->author->accountId;
+    }
+
     /**
      * mapping function for json_mapper.
      *
