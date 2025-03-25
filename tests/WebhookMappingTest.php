@@ -1,16 +1,5 @@
 <?php
 
-//  _        _      _         _
-// | |  _  _| |_  _| |__ _  _| |__ _  _
-// | |_| || | | || | '_ \ || | '_ \ || |
-// |____\_,_|_|\_,_|_.__/\_,_|_.__/\_,_|
-//
-// Copyright © Lulububu Software GmbH - All Rights Reserved
-// https://lulububu.de
-//
-// Unauthorized copying of this file, via any medium is strictly prohibited!
-// Proprietary and confidential.
-
 namespace JiraCloud\Test;
 
 use DateTime;
@@ -25,10 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class WebhookMappingTest
- *
- * @author  Philippos Tiropoulos <philippos@lulububu.de>
- *
- * @package JiraCloud\Test
  */
 class WebhookMappingTest extends TestCase
 {
@@ -40,33 +25,69 @@ class WebhookMappingTest extends TestCase
         $mapper                                            = new JsonMapper();
         $mapper->classMap['\\' . DateTimeInterface::class] = DateTime::class;
 
-        $this->assertEquals(1741176177731, $data->timestamp);
-        $this->assertEquals('jira:issue_updated', $data->webhookEvent);
+        $this->assertEquals(
+            1741176177731,
+            $data->timestamp
+        );
+        $this->assertEquals(
+            'jira:issue_updated',
+            $data->webhookEvent
+        );
 
         $user = $mapper->map($data->user, new User());
 
-        $this->assertInstanceOf(User::class, $user);
-        $this->assertEquals('557058:0459787c-4689-4c30-9570-b5eca6591759', $user->accountId);
+        $this->assertInstanceOf(
+            User::class,
+            $user
+        );
+        $this->assertEquals(
+            '557058:0459787c-4689-4c30-9570-b5eca6591759',
+            $user->accountId
+        );
 
         $issueService = new IssueService();
         $issue        = $issueService->getIssueFromJSON($data->issue);
 
-        $this->assertInstanceOf(Issue::class, $issue);
-        $this->assertEquals('TEST-5672', $issue->getKey());
+        $this->assertInstanceOf(
+            Issue::class,
+            $issue
+        );
+        $this->assertEquals(
+            'TEST-5672',
+            $issue->getKey()
+        );
 
-        $changelog = $mapper->map($data->changelog, new Changelog());
+        $changelog = $mapper->map(
+            $data->changelog,
+            new Changelog('')
+        );
 
-        $this->assertInstanceOf(Changelog::class, $changelog);
-        $this->assertCount(2, $changelog->getItems());
-        $this->assertEquals('resolution', $changelog->getItems()[0]->getField());
+        $this->assertInstanceOf(
+            Changelog::class,
+            $changelog
+        );
+        $this->assertCount(
+            2,
+            $changelog->getItems()
+        );
+        $this->assertEquals(
+            'resolution',
+            $changelog->getItems()[0]->getField()
+        );
 
         if (isset($data->comment)) {
             $comment = $mapper->map($data->comment, new Comment());
 
-            $this->assertInstanceOf(Comment::class, $comment);
+            $this->assertInstanceOf(
+                Comment::class,
+                $comment
+            );
             $this->assertNotEmpty($comment->body);
         } else {
-            $this->assertTrue(true, 'No comment in this webhook – skipping.');
+            $this->assertTrue(
+                true,
+                'No comment in this webhook – skipping.'
+            );
         }
     }
 }
