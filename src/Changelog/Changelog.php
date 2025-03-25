@@ -1,36 +1,22 @@
 <?php
 
-//  _        _      _         _
-// | |  _  _| |_  _| |__ _  _| |__ _  _
-// | |_| || | | || | '_ \ || | '_ \ || |
-// |____\_,_|_|\_,_|_.__/\_,_|_.__/\_,_|
-//
-// Copyright © Lulububu Software GmbH - All Rights Reserved
-// https://lulububu.de
-//
-// Unauthorized copying of this file, via any medium is strictly prohibited!
-// Proprietary and confidential.
-
 namespace JiraCloud\Changelog;
 
 use JsonMapper;
 use JsonSerializable;
 
-/**
- * Class Changelog
- *
- * @author  Philippos Tiropoulos <philippos@lulububu.de>
- *
- * @package JiraCloud\Changelog
- */
 class Changelog implements JsonSerializable
 {
-    protected string $id;
-
     /**
-     * @var ChangelogItem[]
+     * @param string $id
+     * @param ChangelogItem[] $items
      */
-    protected array $items = [];
+    public function __construct(
+        protected string $id,
+        protected array  $items = [],
+    )
+    {
+    }
 
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
@@ -55,7 +41,7 @@ class Changelog implements JsonSerializable
             if ($item instanceof ChangelogItem) {
                 $this->items[] = $item;
             } else if (is_object($item)) {
-                $mapped = new ChangelogItem();
+                $mapped = new ChangelogItem('');
 
                 $mapper->map($item, $mapped);
 

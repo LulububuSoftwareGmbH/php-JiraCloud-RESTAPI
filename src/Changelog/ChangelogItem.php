@@ -1,35 +1,22 @@
 <?php
 
-//  _        _      _         _
-// | |  _  _| |_  _| |__ _  _| |__ _  _
-// | |_| || | | || | '_ \ || | '_ \ || |
-// |____\_,_|_|\_,_|_.__/\_,_|_.__/\_,_|
-//
-// Copyright © Lulububu Software GmbH - All Rights Reserved
-// https://lulububu.de
-//
-// Unauthorized copying of this file, via any medium is strictly prohibited!
-// Proprietary and confidential.
-
 namespace JiraCloud\Changelog;
 
 use JsonSerializable;
 
-/**
- * Class ChangelogItem
- *
- * @author  Philippos Tiropoulos <philippos@lulububu.de>
- *
- * @package JiraCloud\Changelog
- */
 class ChangelogItem implements JsonSerializable
 {
-    protected string $field;
-    protected ?string $fieldtype = null;
-    protected ?string $from = null;
-    protected ?string $fromString = null;
-    protected ?string $to = null;
-    protected ?string $toString = null;
+    public function __construct(
+        protected string  $field,
+        protected ?string $fieldtype = null,
+        protected ?string $fieldId = null,
+        protected ?string $from = null,
+        protected ?string $fromString = null,
+        protected ?string $to = null,
+        protected ?string $toString = null,
+    )
+    {
+    }
 
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
@@ -48,6 +35,11 @@ class ChangelogItem implements JsonSerializable
     public function setFieldtype(?string $fieldtype): void
     {
         $this->fieldtype = $fieldtype;
+    }
+
+    public function setFieldId(?string $fieldId): void
+    {
+        $this->fieldId = $fieldId;
     }
 
     public function setFrom(string $from): void
