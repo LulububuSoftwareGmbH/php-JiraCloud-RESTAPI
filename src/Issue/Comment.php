@@ -3,6 +3,8 @@
 namespace JiraCloud\Issue;
 
 use DateTimeInterface;
+use DH\Adf\Node\Block\Document;
+use DH\Adf\Node\Node;
 use InvalidArgumentException;
 use JiraCloud\ADF\AtlassianDocumentFormat;
 
@@ -58,6 +60,16 @@ class Comment implements \JsonSerializable
         $this->renderedBody = $renderedBody;
     }
 
+    public function getAuthor(): ?Reporter
+    {
+        return $this->author;
+    }
+
+    public function getAuthorAccountId(): ?string
+    {
+        return $this->author->accountId;
+    }
+
     /**
      * mapping function for json_mapper.
      *
@@ -78,6 +90,44 @@ class Comment implements \JsonSerializable
         }
 
         return $this;
+    }
+
+    public function getBodyText(): string
+    {
+        if (!$this->body instanceof AtlassianDocumentFormat) {
+            return '';
+        }
+
+        $document = $this->body->getDocument();
+
+        if (!$document instanceof Document) {
+            return '';
+        }
+
+        $text = '';
+
+        foreach ($document->getContent() as $node) {
+            $text .= $this->extractTextFromNode($node) . PHP_EOL;
+        }
+
+        return trim($text);
+    }
+
+    private function extractTextFromNode(Node $node): string
+    {
+        $result = '';
+
+        if (method_exists($node, 'getContent')) {
+            foreach ($node->getContent() as $child) {
+                $result .= $this->extractTextFromNode($child);
+            }
+        }
+
+        if (method_exists($node, 'getText')) {
+            $result .= $node->getText();
+        }
+
+        return $result;
     }
 
     #[\ReturnTypeWillChange]

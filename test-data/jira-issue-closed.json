@@ -1,0 +1,345 @@
+{
+    "timestamp":             1741176177731,
+    "webhookEvent":          "jira:issue_updated",
+    "issue_event_type_name": "issue_generic",
+    "user":                  {
+        "self":        "https://lulububu.atlassian.net/rest/api/2/user?accountId=557058%3A0459787c-4689-4c30-9570-b5eca6591759",
+        "accountId":   "557058:0459787c-4689-4c30-9570-b5eca6591759",
+        "avatarUrls":  {
+            "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/48",
+            "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/24",
+            "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/16",
+            "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/32"
+        },
+        "displayName": "Thomas Kekeisen",
+        "active":      true,
+        "timeZone":    "CET",
+        "accountType": "atlassian"
+    },
+    "issue":                 {
+        "id":     "85248",
+        "self":   "https://lulububu.atlassian.net/rest/api/2/85248",
+        "key":    "TEST-5672",
+        "fields": {
+            "statuscategorychangedate":      "2025-03-05T13:02:57.731+0100",
+            "customfield_10070":             null,
+            "customfield_10071":             null,
+            "customfield_10072":             "2025-03-05",
+            "customfield_10073":             null,
+            "customfield_10074":             null,
+            "customfield_10075":             null,
+            "customfield_10076":             null,
+            "fixVersions":                   [ ],
+            "customfield_10077":             null,
+            "customfield_10078":             null,
+            "resolution":                    null,
+            "customfield_10079":             null,
+            "lastViewed":                    "2025-03-05T13:01:51.336+0100",
+            "customfield_10060":             null,
+            "customfield_10061":             null,
+            "customfield_10062":             null,
+            "customfield_10063":             null,
+            "customfield_10065":             null,
+            "customfield_10066":             null,
+            "priority":                      {
+                "self":    "https://lulububu.atlassian.net/rest/api/2/priority/3",
+                "iconUrl": "https://lulububu.atlassian.net/images/icons/priorities/medium.svg",
+                "name":    "Medium",
+                "id":      "3"
+            },
+            "customfield_10100":             null,
+            "customfield_10067":             null,
+            "customfield_10068":             null,
+            "customfield_10069":             null,
+            "labels":                        [
+                "ShowInBoard"
+            ],
+            "aggregatetimeoriginalestimate": null,
+            "timeestimate":                  null,
+            "versions":                      [ ],
+            "issuelinks":                    [
+                {
+                    "id":           "168566",
+                    "self":         "https://lulububu.atlassian.net/rest/api/2/issueLink/168566",
+                    "type":         {
+                        "id":      "10208",
+                        "name":    "Source context",
+                        "inward":  "was in progress while created",
+                        "outward": "was created while processing",
+                        "self":    "https://lulububu.atlassian.net/rest/api/2/issueLinkType/10208"
+                    },
+                    "outwardIssue": {
+                        "id":     "85048",
+                        "key":    "ROBOTHOMAS-962",
+                        "self":   "https://lulububu.atlassian.net/rest/api/2/issue/85048",
+                        "fields": {
+                            "summary":   "ShowInBoard-Label entfernen wenn ein Task geschlossen wird",
+                            "status":    {
+                                "self":           "https://lulububu.atlassian.net/rest/api/2/status/3",
+                                "description":    "This issue is being actively worked on at the moment by the assignee.",
+                                "iconUrl":        "https://lulububu.atlassian.net/images/icons/statuses/inprogress.png",
+                                "name":           "In Progress",
+                                "id":             "3",
+                                "statusCategory": {
+                                    "self":      "https://lulububu.atlassian.net/rest/api/2/statuscategory/4",
+                                    "id":        4,
+                                    "key":       "indeterminate",
+                                    "colorName": "yellow",
+                                    "name":      "In Progress"
+                                }
+                            },
+                            "priority":  {
+                                "self":    "https://lulububu.atlassian.net/rest/api/2/priority/3",
+                                "iconUrl": "https://lulububu.atlassian.net/images/icons/priorities/medium.svg",
+                                "name":    "Medium",
+                                "id":      "3"
+                            },
+                            "issuetype": {
+                                "self":           "https://lulububu.atlassian.net/rest/api/2/issuetype/10002",
+                                "id":             "10002",
+                                "description":    "A task that needs to be done.",
+                                "iconUrl":        "https://lulububu.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+                                "name":           "Task",
+                                "subtask":        false,
+                                "avatarId":       10318,
+                                "hierarchyLevel": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "assignee":                      {
+                "self":        "https://lulububu.atlassian.net/rest/api/2/user?accountId=557058%3A0459787c-4689-4c30-9570-b5eca6591759",
+                "accountId":   "557058:0459787c-4689-4c30-9570-b5eca6591759",
+                "avatarUrls":  {
+                    "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/48",
+                    "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/24",
+                    "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/16",
+                    "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/32"
+                },
+                "displayName": "Thomas Kekeisen",
+                "active":      true,
+                "timeZone":    "CET",
+                "accountType": "atlassian"
+            },
+            "status":                        {
+                "self":           "https://lulububu.atlassian.net/rest/api/2/status/4",
+                "description":    "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+                "iconUrl":        "https://lulububu.atlassian.net/images/icons/statuses/reopened.png",
+                "name":           "Reopened",
+                "id":             "4",
+                "statusCategory": {
+                    "self":      "https://lulububu.atlassian.net/rest/api/2/statuscategory/2",
+                    "id":        2,
+                    "key":       "new",
+                    "colorName": "blue-gray",
+                    "name":      "New"
+                }
+            },
+            "components":                    [ ],
+            "customfield_10050":             "test",
+            "customfield_10051":             null,
+            "customfield_10053":             null,
+            "customfield_10054":             null,
+            "customfield_10055":             null,
+            "customfield_10056":             null,
+            "customfield_10057":             null,
+            "customfield_10058":             null,
+            "customfield_10059":             null,
+            "aggregatetimeestimate":         null,
+            "creator":                       {
+                "self":        "https://lulububu.atlassian.net/rest/api/2/user?accountId=557058%3A0459787c-4689-4c30-9570-b5eca6591759",
+                "accountId":   "557058:0459787c-4689-4c30-9570-b5eca6591759",
+                "avatarUrls":  {
+                    "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/48",
+                    "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/24",
+                    "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/16",
+                    "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/32"
+                },
+                "displayName": "Thomas Kekeisen",
+                "active":      true,
+                "timeZone":    "CET",
+                "accountType": "atlassian"
+            },
+            "subtasks":                      [ ],
+            "customfield_10040":             null,
+            "customfield_10041":             null,
+            "reporter":                      {
+                "self":        "https://lulububu.atlassian.net/rest/api/2/user?accountId=557058%3A0459787c-4689-4c30-9570-b5eca6591759",
+                "accountId":   "557058:0459787c-4689-4c30-9570-b5eca6591759",
+                "avatarUrls":  {
+                    "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/48",
+                    "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/24",
+                    "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/16",
+                    "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:0459787c-4689-4c30-9570-b5eca6591759/7769cb63-1528-4aa0-8b08-1a3f9ec5017e/32"
+                },
+                "displayName": "Thomas Kekeisen",
+                "active":      true,
+                "timeZone":    "CET",
+                "accountType": "atlassian"
+            },
+            "customfield_10043":             null,
+            "customfield_10044":             null,
+            "aggregateprogress":             {
+                "progress": 0,
+                "total":    0
+            },
+            "customfield_10045":             null,
+            "customfield_10046":             null,
+            "customfield_10047":             null,
+            "customfield_10038":             null,
+            "customfield_10039":             null,
+            "progress":                      {
+                "progress": 0,
+                "total":    0
+            },
+            "votes":                         {
+                "self":     "https://lulububu.atlassian.net/rest/api/2/issue/TEST-5672/votes",
+                "votes":    0,
+                "hasVoted": false
+            },
+            "issuetype":                     {
+                "self":           "https://lulububu.atlassian.net/rest/api/2/issuetype/10002",
+                "id":             "10002",
+                "description":    "A task that needs to be done.",
+                "iconUrl":        "https://lulububu.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+                "name":           "Task",
+                "subtask":        false,
+                "avatarId":       10318,
+                "hierarchyLevel": 0
+            },
+            "timespent":                     null,
+            "project":                       {
+                "self":            "https://lulububu.atlassian.net/rest/api/2/project/10066",
+                "id":              "10066",
+                "key":             "TEST",
+                "name":            "Test",
+                "projectTypeKey":  "software",
+                "simplified":      false,
+                "avatarUrls":      {
+                    "48x48": "https://lulububu.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10584",
+                    "24x24": "https://lulububu.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10584?size=small",
+                    "16x16": "https://lulububu.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10584?size=xsmall",
+                    "32x32": "https://lulububu.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10584?size=medium"
+                },
+                "projectCategory": {
+                    "self":        "https://lulububu.atlassian.net/rest/api/2/projectCategory/10000",
+                    "id":          "10000",
+                    "description": "",
+                    "name":        "Software"
+                }
+            },
+            "customfield_10032":             null,
+            "customfield_10033":             null,
+            "customfield_10034":             null,
+            "aggregatetimespent":            null,
+            "customfield_10035":             [ ],
+            "customfield_10036":             null,
+            "customfield_10037":             null,
+            "resolutiondate":                null,
+            "workratio":                     -1,
+            "watches":                       {
+                "self":       "https://lulububu.atlassian.net/rest/api/2/issue/TEST-5672/watchers",
+                "watchCount": 2,
+                "isWatching": true
+            },
+            "created":                       "2025-03-05T13:01:30.171+0100",
+            "customfield_10020":             {
+                "id":    5,
+                "value": "Lulububu (internal)"
+            },
+            "customfield_10019":             null,
+            "updated":                       "2025-03-05T13:02:57.731+0100",
+            "customfield_10090":             null,
+            "customfield_10091":             null,
+            "customfield_10092":             null,
+            "customfield_10094":             null,
+            "timeoriginalestimate":          null,
+            "customfield_10096":             null,
+            "customfield_10097":             null,
+            "description":                   null,
+            "customfield_10010":             null,
+            "customfield_10098":             null,
+            "customfield_10011":             "1|i0a70j:",
+            "customfield_10099":             null,
+            "customfield_10012":             null,
+            "customfield_10013":             null,
+            "timetracking":                  { },
+            "security":                      null,
+            "customfield_10008":             null,
+            "customfield_10009":             {
+                "hasEpicLinkFieldDependency": false,
+                "showField":                  false,
+                "nonEditableReason":          {
+                    "reason":  "EPIC_LINK_SHOULD_BE_USED",
+                    "message": "To set an epic as the parent, use the epic link instead"
+                }
+            },
+            "attachment":                    [ ],
+            "summary":                       "test",
+            "customfield_10080":             null,
+            "customfield_10081":             null,
+            "customfield_10082":             null,
+            "customfield_10085":             null,
+            "customfield_10087":             null,
+            "customfield_10000":             "{}",
+            "customfield_10088":             null,
+            "customfield_10089":             null,
+            "customfield_10001":             null,
+            "customfield_10004":             [ ],
+            "environment":                   null,
+            "duedate":                       null
+        }
+    },
+    "changelog":             {
+        "id":    "1698294",
+        "items": [
+            {
+                "field":      "resolution",
+                "fieldtype":  "jira",
+                "fieldId":    "resolution",
+                "from":       "10000",
+                "fromString": "Done",
+                "to":         null,
+                "toString":   null
+            },
+            {
+                "field":      "status",
+                "fieldtype":  "jira",
+                "fieldId":    "status",
+                "from":       "4",
+                "fromString": "Reopened",
+                "to":         "6",
+                "toString":   "Closed"
+            }
+        ]
+    },
+    "comment": {
+        "self": "https://lulububu.atlassian.net/rest/api/3/issue/TEST-5672/comment/123456",
+        "id": "123456",
+        "author": {
+            "accountId": "557058:0459787c-4689-4c30-9570-b5eca6591759",
+            "displayName": "Thomas Kekeisen",
+            "avatarUrls": {
+                "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/.../48"
+            }
+        },
+        "body": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Dies ist ein Test-Kommentar mit ADF body."
+                        }
+                    ]
+                }
+            ]
+        },
+        "created": "2025-03-05T13:02:57.731+0100",
+        "updated": "2025-03-05T13:05:00.000+0100"
+    }
+}

@@ -2,9 +2,7 @@
 
 namespace JiraCloud\ADF;
 
-use DH\Adf\Node\Block\CodeBlock;
 use DH\Adf\Node\Block\Document;
-use DH\Adf\Node\Block\Paragraph;
 use DH\Adf\Node\Node;
 
 /**
@@ -18,9 +16,9 @@ class AtlassianDocumentFormat implements \JsonSerializable
 
     public string $version;
 
-    private ?Document $document = null;
+    private Document|Node|null $document = null;
 
-    public function __construct(Document|Node $document)
+    public function __construct(Document|Node|null $document)
     {
         $this->document = $document;
     }
@@ -31,9 +29,14 @@ class AtlassianDocumentFormat implements \JsonSerializable
         return $this->document->jsonSerialize();
     }
 
-    public function setDocument(Document|Node $document)
+    public function setDocument(Document|Node|null $document)
     {
         $this->document = $document;
+    }
+
+    public function getDocument(): Document|Node|null
+    {
+        return $this->document;
     }
 
     public static function fromArray(array $adf): self

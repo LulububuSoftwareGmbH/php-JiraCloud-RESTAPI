@@ -5,6 +5,7 @@ namespace JiraCloud\Issue;
 use DateTimeInterface;
 use DH\Adf\Node\Block\Document;
 use DH\Adf\Node\Node;
+use JiraCloud\ADF\AtlassianDocumentFormat;
 
 /**
  * Builder class for Comment.
@@ -180,13 +181,29 @@ class CommentBuilder
     /**
      * Builds the body from all added parts if body parts exist.
      */
-    private function buildBody(): string
+    private function buildBody(): AtlassianDocumentFormat
     {
-        if (empty($this->bodyParts)) {
-            return $this->body;
-        }
+        $text = implode('', $this->bodyParts);
 
-        return implode('', $this->bodyParts);
+        $adf = [
+            'version' => 1,
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'paragraph',
+                    'content' => [
+                        [
+                            'type' => 'text',
+                            'text' => $text,
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $document = Document::load($adf);
+
+        return new AtlassianDocumentFormat($document);
     }
 
     public function build(): Comment
