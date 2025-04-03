@@ -30,7 +30,7 @@ class IssueTest extends TestCase
 
             file_put_contents('jira-issue.json', json_encode($issue, JSON_PRETTY_PRINT));
 
-            print_r($issue->fields->versions[0]);
+            print_r($issue->getFields()->versions[0]);
         } catch (Exception $e) {
             $this->fail($e->getMessage());
         }
@@ -130,8 +130,8 @@ CODE;
             $issueKey = $ret->{'key'};
 
             $this->assertNotNull($issueKey);
-            $this->assertNotNull($ret->fields->summary);
-            $this->assertNotNull($ret->fields->issuetype);
+            $this->assertNotNull($ret->getFields()->summary);
+            $this->assertNotNull($ret->getFields()->issuetype);
 
             return $issueKey;
         } catch (Exception $e) {
@@ -242,7 +242,7 @@ CODE;
             $issueKey = $ret->{'key'};
 
             $this->assertNotNull($issueKey);
-            $this->assertNotNull($ret->fields->summary);
+            $this->assertNotNull($ret->getFields()->summary);
             //$this->assertEquals('Sub-task', $ret->fields->issuetype->name);
 
             return $subTaskIssueKey;

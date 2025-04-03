@@ -21,11 +21,11 @@ class IssueFromJsonTest extends TestCase
         );
         $this->assertEquals(
             'ROBOTHOMAS-1015',
-            $issue->key
+            $issue->getKey()
         );
-        $this->assertNotEmpty($issue->fields->summary);
+        $this->assertNotEmpty($issue->getFields()->summary);
 
-        $commentBodyDocument = $issue->fields->comment->comments[0]->body;
+        $commentBodyDocument = $issue->getFields()->comment->comments[0]->body;
         $documentContent     = $commentBodyDocument->jsonSerialize()['content'] ?? [];
         $firstParagraph      = $documentContent[0] ?? null;
         $firstTextNode       = $firstParagraph->getContent()[0] ?? null;

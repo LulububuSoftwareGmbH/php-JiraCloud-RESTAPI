@@ -71,21 +71,21 @@ class MapperTest extends TestCase
 
         $this->assertInstanceOf(Issue::class, $issue);
 
-        $this->assertTrue(is_array($issue->renderedFields));
-        $this->assertArrayHasKey('description', $issue->renderedFields);
-        $this->assertEquals(10000, $issue->renderedFields['attachment'][0]->id);
+        $this->assertTrue(is_array($issue->getRenderedFields()));
+        $this->assertArrayHasKey('description', $issue->getRenderedFields());
+        $this->assertEquals(10000, $issue->getRenderedFields()['attachment'][0]->id);
 
-        $this->assertTrue(is_array($issue->names));
-        $this->assertArrayHasKey('issuetype', $issue->names);
-        $this->assertArrayHasKey('timespent', $issue->names);
+        $this->assertTrue(is_array($issue->getNames()));
+        $this->assertArrayHasKey('issuetype', $issue->getNames());
+        $this->assertArrayHasKey('timespent', $issue->getNames());
 
-        $this->assertTrue(is_array($issue->schema));
-        $this->assertArrayHasKey('fixVersions', $issue->schema);
-        $this->assertEquals('array', $issue->schema['fixVersions']->type);
+        $this->assertTrue(is_array($issue->getSchema()));
+        $this->assertArrayHasKey('fixVersions', $issue->getSchema());
+        $this->assertEquals('array', $issue->getSchema()['fixVersions']->type);
 
-        $this->assertTrue(is_array($issue->transitions));
-        $this->assertLessThan(3, count($issue->transitions));
-        $this->assertEquals('작업 시작', $issue->transitions[0]->name);
+        $this->assertTrue(is_array($issue->getTransitions()));
+        $this->assertLessThan(3, count($issue->getTransitions()));
+        $this->assertEquals('작업 시작', $issue->getTransitions()[0]->name);
 
     }
 

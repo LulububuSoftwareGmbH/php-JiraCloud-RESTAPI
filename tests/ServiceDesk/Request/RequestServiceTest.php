@@ -301,9 +301,9 @@ class RequestServiceTest extends TestCase
         $field->timeTracking->timeSpentSeconds = 3151231;
 
         $item = new Issue();
-        $item->id = '1232';
-        $item->key = '123vfdsfsdf';
-        $item->fields = $field;
+        $item->setId( '1232');
+        $item->setKey( '123vfdsfsdf');
+        $item->setFields($field);
 
         $this->client->method('exec')
             ->with($this->uri . "/20")
