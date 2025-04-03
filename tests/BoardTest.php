@@ -79,7 +79,7 @@ class BoardTest extends TestCase
 
         foreach ($board_issues as $issue) {
             $this->assertInstanceOf(Issue::class, $issue);
-            $this->assertNotEmpty($issue->id);
+            $this->assertNotEmpty($issue->getId());
         }
     }
 

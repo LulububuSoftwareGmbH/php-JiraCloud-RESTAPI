@@ -365,7 +365,7 @@ class RequestService
             new Issue()
         );
 
-        return $issue->fields->timeTracking;
+        return $issue->getFields()->timeTracking;
     }
 
     /**

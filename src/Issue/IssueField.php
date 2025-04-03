@@ -354,9 +354,9 @@ class IssueField implements \JsonSerializable
         }
 
         if (is_numeric($keyOrId)) {
-            $this->parent->id = $keyOrId;
+            $this->parent->setId($keyOrId);
         } else {
-            $this->parent->key = $keyOrId;
+            $this->parent->setKey($keyOrId);
         }
 
         return $this;

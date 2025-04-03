@@ -68,7 +68,7 @@ class IssueService extends \JiraCloud\JiraClient
         $issue = new Issue();
 
         // serialized only not null field.
-        $issue->fields = $issueField;
+        $issue->setFields($issueField);
 
         $data = json_encode($issue);
 
@@ -96,7 +96,7 @@ class IssueService extends \JiraCloud\JiraClient
 
         foreach ($issueFields as $issueField) {
             $issue = new Issue();
-            $issue->fields = $issueField;
+            $issue->setFields($issueField);
             $issues[] = $issue;
         }
 
@@ -192,7 +192,7 @@ class IssueService extends \JiraCloud\JiraClient
         $issue = new Issue();
 
         // serialize only not null field.
-        $issue->fields = $issueField;
+        $issue->setFields($issueField);
 
         //$issue = $this->filterNullVariable((array)$issue);
 
@@ -534,7 +534,7 @@ class IssueService extends \JiraCloud\JiraClient
             new Issue()
         );
 
-        return $issue->fields->timeTracking;
+        return $issue->getFields()->timeTracking;
     }
 
     /**
