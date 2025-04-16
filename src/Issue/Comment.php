@@ -73,7 +73,7 @@ class Comment implements \JsonSerializable
     /**
      * mapping function for json_mapper.
      *
-     * @param string $body
+     * @param mixed $body
      *
      * @return $this
      */
