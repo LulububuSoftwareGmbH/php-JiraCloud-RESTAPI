@@ -7,6 +7,7 @@ use DH\Adf\Node\Block\Document;
 use DH\Adf\Node\Node;
 use InvalidArgumentException;
 use JiraCloud\ADF\AtlassianDocumentFormat;
+use stdClass;
 
 class Comment implements \JsonSerializable
 {
@@ -73,21 +74,30 @@ class Comment implements \JsonSerializable
     /**
      * mapping function for json_mapper.
      *
-     * @param string $body
+     * @param mixed $body
      *
      * @return $this
      */
     public function setBody(mixed $body): static
     {
-        if ($body instanceof AtlassianDocumentFormat) {
-            $this->body = $body;
-        } else if (is_array($body)) {
-            $this->body = AtlassianDocumentFormat::fromArray($body);
-        } else if ($body instanceof \stdClass) {
-            $this->body = AtlassianDocumentFormat::fromArray((array)$body);
-        } else {
-            throw new InvalidArgumentException('Unsupported type for comment body');
-        }
+        $this->body = match (true) {
+            $body instanceof AtlassianDocumentFormat => $body,
+            is_array($body) => AtlassianDocumentFormat::fromArray($body),
+            $body instanceof stdClass => AtlassianDocumentFormat::fromArray((array)$body),
+            is_string($body) => AtlassianDocumentFormat::fromArray([
+                'type'    => 'doc',
+                'version' => 1,
+                'content' => [
+                    [
+                        'type'    => 'paragraph',
+                        'content' => [
+                            ['type' => 'text', 'text' => $body],
+                        ],
+                    ],
+                ],
+            ]),
+            default => throw new InvalidArgumentException('Unsupported type for comment body'),
+        };
 
         return $this;
     }
