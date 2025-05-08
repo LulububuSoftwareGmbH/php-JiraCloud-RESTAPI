@@ -771,7 +771,7 @@ class RequestService
      *
      * @throws JsonMapper_Exception|JiraException|JsonException
      */
-    public function getIssueSecuritySchemes(int $securityId): SecurityScheme
+    public function getIssueSecuritySchemes(string $securityId): SecurityScheme
     {
         $url = '/issuesecurityschemes/'.$securityId;
 

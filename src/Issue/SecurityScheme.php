@@ -6,7 +6,7 @@ class SecurityScheme implements \JsonSerializable
 {
     public string $self;
 
-    public int $id;
+    public string $id;
 
     public string $name;
 
