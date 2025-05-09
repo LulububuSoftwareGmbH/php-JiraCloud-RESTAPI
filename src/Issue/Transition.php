@@ -51,6 +51,15 @@ class Transition implements \JsonSerializable
         $this->transition['untranslatedName'] = $untranslatedName;
     }
 
+    public function setToStatusId(string $id): void
+    {
+        if (is_null($this->transition)) {
+            $this->transition = [];
+        }
+
+        $this->transition['toStatusId'] = $id;
+    }
+
     public function setTransitionId(string $id): void
     {
         if (is_null($this->transition)) {
