@@ -424,24 +424,29 @@ class IssueService extends \JiraCloud\JiraClient
      *
      * @return string
      */
-    public function findTransitonId(string|int $issueIdOrKey, string $transitionToName): string
+    public function findTransitionId(string|int $issueIdOrKey, string $transitionToValue): string
     {
-        $this->log->debug('findTransitonId=');
+        $this->log->info('findTransitionId=');
 
         $ret = $this->getTransition($issueIdOrKey);
 
+        $this->log->info('getTransitions result=' . var_export($ret, true));
+
         foreach ($ret as $trans) {
-            $toName = $trans->to->name;
+            $toName             = $trans->to->name;
+            $toId               = $trans->to->id;
 
-            $this->log->debug('getTransitions result='.var_export($ret, true));
-
-            if (strcasecmp($toName, $transitionToName) === 0) {
+            if (
+                strcasecmp($toName, $transitionToValue) === 0 ||
+                strcasecmp($toId, $transitionToValue) === 0
+            ) {
                 return $trans->id;
             }
         }
 
-        // transition keyword not found
-        throw new JiraException("Transition name '$transitionToName' not found on JIRA Server.");
+        throw new JiraException(
+            sprintf("Transition name '%s' not found on JIRA Server.", $transitionToValue)
+        );
     }
 
     /**
@@ -456,13 +461,18 @@ class IssueService extends \JiraCloud\JiraClient
      */
     public function transition(string|int $issueIdOrKey, Transition $transition): ?string
     {
+        $this->log->info('transition='.var_export($transition, true));
+
+        $name = &$transition->transition['name'];
+        $toStatusId = &$transition->transition['toStatusId'];
+
         if (!isset($transition->transition['id'])) {
-            if (isset($transition->transition['untranslatedName'])) {
-                $transition->transition['id'] = $this->findTransitonIdByUntranslatedName($issueIdOrKey, $transition->transition['untranslatedName']);
-            } elseif (isset($transition->transition['name'])) {
-                $transition->transition['id'] = $this->findTransitonId($issueIdOrKey, $transition->transition['name']);
+            if (isset($name)) {
+                $transition->transition['id'] = $this->findTransitionId($issueIdOrKey, $name);
+            } elseif ($toStatusId) {
+                $transition->transition['id'] = $this->findTransitionId($issueIdOrKey, $toStatusId);
             } else {
-                throw new JiraException('you must set either name or untranslatedName for performing transition.');
+                throw new JiraException('you must set either name toStatusId for performing transition.');
             }
         }
 
@@ -1161,36 +1171,5 @@ class IssueService extends \JiraCloud\JiraClient
         $ret = $this->exec($this->uri."/$issueIdOrKey".$queryParam, $postData, 'PUT');
 
         return $ret;
-    }
-
-    /**
-     * find transition id by transition's untranslatedName.
-     *
-     * @param string|int $issueIdOrKey
-     * @param string     $untranslatedName
-     *
-     * @throws JiraException
-     *
-     * @return string
-     */
-    public function findTransitonIdByUntranslatedName(string|int $issueIdOrKey, string $untranslatedName): string
-    {
-        $this->log->debug('findTransitonIdByUntranslatedName=');
-
-        $prj = new ProjectService($this->getConfiguration());
-        $pkey = explode('-', $issueIdOrKey);
-        $transitionArray = $prj->getProjectTransitionsToArray($pkey[0]);
-
-        $this->log->debug('getTransitions result='.var_export($transitionArray, true));
-
-        foreach ($transitionArray as $trans) {
-            if (strcasecmp($trans['name'], $untranslatedName) === 0 ||
-                strcasecmp($trans['untranslatedName'] ?? '', $untranslatedName) === 0) {
-                return $trans['id'];
-            }
-        }
-
-        // transition keyword not found
-        throw new JiraException("Transition name '$untranslatedName' not found on JIRA Server.");
     }
 }
