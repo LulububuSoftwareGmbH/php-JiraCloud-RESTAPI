@@ -181,7 +181,7 @@ class CommentBuilder
     /**
      * Builds the body from all added parts if body parts exist.
      */
-    private function buildBody(): AtlassianDocumentFormat
+    public function buildBody(): AtlassianDocumentFormat
     {
         $text = implode('', $this->bodyParts);
 
