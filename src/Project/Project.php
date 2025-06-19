@@ -109,6 +109,8 @@ class Project implements \JsonSerializable
 
     public bool $isPrivate;
 
+    public bool $archived = false;
+
     public array $properties;
 
     public string $entityId;
@@ -250,7 +252,7 @@ class Project implements \JsonSerializable
     public function setAssigneeType(?string $assigneeType): static
     {
         if (!in_array($assigneeType, ['PROJECT_LEAD', 'UNASSIGNED'])) {
-            throw new JiraException('invalid assigneeType:'.$assigneeType);
+            throw new JiraException('invalid assigneeType:' . $assigneeType);
         }
 
         $this->assigneeType = $assigneeType;
