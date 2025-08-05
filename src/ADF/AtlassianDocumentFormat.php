@@ -184,6 +184,22 @@ class AtlassianDocumentFormat implements \JsonSerializable
         ];
     }
 
+    public static function createTableCell(string $text, array $marks = [], array $attrs = []): array
+    {
+        $cell = [
+            'type' => 'tableCell',
+            'content' => [
+                self::createParagraph($text, $marks),
+            ],
+        ];
+
+        if (!empty($attrs)) {
+            $cell['attrs'] = $attrs;
+        }
+
+        return $cell;
+    }
+
 
     public static function createTableRow(array $cells): array
     {
@@ -193,10 +209,17 @@ class AtlassianDocumentFormat implements \JsonSerializable
         ];
     }
 
-    public static function createTable(array $rows): array
+    public static function createTable(array $rows, array $attrs = []): array
     {
+        $defaultAttrs = [
+            'isNumberColumnEnabled' => false,
+            'layout' => 'default',
+            'width' => 760,
+        ];
+
         return [
             'type' => 'table',
+            'attrs' => array_merge($defaultAttrs, $attrs),
             'content' => $rows,
         ];
     }
