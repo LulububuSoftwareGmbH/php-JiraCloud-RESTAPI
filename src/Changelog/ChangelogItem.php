@@ -42,7 +42,7 @@ class ChangelogItem implements JsonSerializable
         $this->fieldId = $fieldId;
     }
 
-    public function setFrom(string $from): void
+    public function setFrom(?string $from): void
     {
         $this->from = $from;
     }
