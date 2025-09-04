@@ -4,6 +4,7 @@ namespace JiraCloud\ADF;
 
 use DH\Adf\Node\Block\Document;
 use DH\Adf\Node\Node;
+use JiraCloud\Issue\CommentBuilder;
 
 /**
  * Class AtlassianDocumentFormat.
@@ -18,8 +19,14 @@ class AtlassianDocumentFormat implements \JsonSerializable
 
     private Document|Node|null $document = null;
 
-    public function __construct(Document|Node|null $document)
+    public function __construct(Document|Node|string|null $document)
     {
+        if (is_string($document)) {
+            $document = CommentBuilder::createDocument([
+                self::createParagraph($document),
+            ]);
+        }
+
         $this->document = $document;
     }
 
