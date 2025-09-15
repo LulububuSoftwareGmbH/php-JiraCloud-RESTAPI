@@ -488,7 +488,7 @@ class IssueService extends \JiraCloud\JiraClient
     }
 
     /**
-     * Search issues.
+     * Search issues using the new non-deprecated JQL search endpoint.
      *
      * @param string $jql
      * @param int    $startAt
@@ -513,7 +513,7 @@ class IssueService extends \JiraCloud\JiraClient
             'validateQuery' => $validateQuery,
         ]);
 
-        $ret = $this->exec('search', $data, 'POST');
+        $ret = $this->exec('search/jql', $data, 'POST');
         $json = json_decode($ret);
 
         $result = $this->json_mapper->map(
