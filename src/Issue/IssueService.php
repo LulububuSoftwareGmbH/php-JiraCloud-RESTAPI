@@ -491,26 +491,23 @@ class IssueService extends \JiraCloud\JiraClient
      * Search issues using the new non-deprecated JQL search endpoint.
      *
      * @param string $jql
-     * @param int    $startAt
      * @param int    $maxResults
      * @param array  $fields
      * @param array  $expand
-     * @param bool   $validateQuery
      *
      * @throws \JsonMapper_Exception
      * @throws JiraException
      *
      * @return IssueSearchResult
      */
-    public function search(string $jql, int $startAt = 0, int $maxResults = 15, array $fields = [], array $expand = [], bool $validateQuery = true): IssueSearchResult
+    public function search(string $jql, int $maxResults = 15, array $fields = [], array $expand = []): IssueSearchResult
     {
+        $expandString = implode(',', $expand);
         $data = json_encode([
             'jql'           => $jql,
-            'startAt'       => $startAt,
             'maxResults'    => $maxResults,
             'fields'        => $fields,
-            'expand'        => $expand,
-            'validateQuery' => $validateQuery,
+            'expand'        => $expandString,
         ]);
 
         $ret = $this->exec('search/jql', $data, 'POST');
