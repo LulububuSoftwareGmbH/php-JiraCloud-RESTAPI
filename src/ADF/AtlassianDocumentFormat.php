@@ -207,6 +207,25 @@ class AtlassianDocumentFormat implements \JsonSerializable
         return $cell;
     }
 
+    public static function createTableCellWithContent(array $content, array $attrs = []): array
+    {
+        $cell = [
+            'type' => 'tableCell',
+            'content' => [
+                [
+                    'type'    => 'paragraph',
+                    'content' => $content,
+                ],
+            ],
+        ];
+
+        if (!empty($attrs)) {
+            $cell['attrs'] = $attrs;
+        }
+
+        return $cell;
+    }
+
 
     public static function createTableRow(array $cells): array
     {
