@@ -107,8 +107,24 @@ class AtlassianDocumentFormat implements \JsonSerializable
         return $textNode;
     }
 
-    public static function createParagraph(string $text, array $marks = []): array
+    public static function createParagraph(string|self $text, array $marks = []): array
     {
+        if ($text instanceof self) {
+            $inlineContent = [];
+            $serialized = json_decode(json_encode($text->jsonSerialize()), true);
+
+            foreach ($serialized['content'] ?? [] as $blockNode) {
+                foreach ($blockNode['content'] ?? [] as $inlineNode) {
+                    $inlineContent[] = $inlineNode;
+                }
+            }
+
+            return [
+                'type' => 'paragraph',
+                'content' => $inlineContent,
+            ];
+        }
+
         return [
             'type' => 'paragraph',
             'content' => [
