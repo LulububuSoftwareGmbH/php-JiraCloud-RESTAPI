@@ -170,6 +170,16 @@ class AtlassianDocumentFormat implements \JsonSerializable
         ];
     }
 
+    public static function createInlineCard(string $url): array
+    {
+        return [
+            'type' => 'inlineCard',
+            'attrs' => [
+                'url' => $url,
+            ],
+        ];
+    }
+
     public static function createListItem(array $content): array
     {
         return [
@@ -248,6 +258,15 @@ class AtlassianDocumentFormat implements \JsonSerializable
         return [
             'type' => 'tableRow',
             'content' => $cells,
+        ];
+    }
+
+    public static function createDocument(array $content): array
+    {
+        return [
+            'version' => 1,
+            'type' => 'doc',
+            'content' => $content,
         ];
     }
 
