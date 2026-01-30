@@ -49,11 +49,35 @@ class AtlassianDocumentFormat implements \JsonSerializable
     public static function fromArray(array $adf): self
     {
         $adf = self::toArrayRecursive($adf);
+        $adf = self::filterUnsupportedNodes($adf);
 
         /** @var Document $document */
         $document = Document::load($adf);
 
         return new self($document);
+    }
+
+    private static function filterUnsupportedNodes(array $data): array
+    {
+        if (isset($data['content']) && is_array($data['content'])) {
+            $filteredContent = [];
+
+            foreach ($data['content'] as $nodeData) {
+                if (!is_array($nodeData) || !isset($nodeData['type'])) {
+                    continue;
+                }
+
+                if (!isset(Node::NODE_MAPPING[$nodeData['type']])) {
+                    continue;
+                }
+
+                $filteredContent[] = self::filterUnsupportedNodes($nodeData);
+            }
+
+            $data['content'] = $filteredContent;
+        }
+
+        return $data;
     }
 
     private static function toArrayRecursive(mixed $data): mixed
