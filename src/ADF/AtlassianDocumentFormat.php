@@ -3,6 +3,7 @@
 namespace JiraCloud\ADF;
 
 use DH\Adf\Node\Block\Document;
+use DH\Adf\Node\Block\Table;
 use DH\Adf\Node\Node;
 use JiraCloud\Issue\CommentBuilder;
 
@@ -59,6 +60,18 @@ class AtlassianDocumentFormat implements \JsonSerializable
 
     private static function filterUnsupportedNodes(array $data): array
     {
+        if (($data['type'] ?? null) === 'table' && isset($data['attrs']['layout'])) {
+            $supportedLayouts = [
+                Table::LAYOUT_DEFAULT,
+                Table::LAYOUT_FULL_WIDTH,
+                Table::LAYOUT_WIDE,
+            ];
+
+            if (!in_array($data['attrs']['layout'], $supportedLayouts, true)) {
+                $data['attrs']['layout'] = Table::LAYOUT_DEFAULT;
+            }
+        }
+
         if (isset($data['content']) && is_array($data['content'])) {
             $filteredContent = [];
 
