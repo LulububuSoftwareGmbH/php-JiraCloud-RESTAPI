@@ -60,6 +60,10 @@ class AtlassianDocumentFormat implements \JsonSerializable
 
     private static function filterUnsupportedNodes(array $data): array
     {
+        if (($data['type'] ?? null) === 'mediaSingle' && isset($data['attrs']['width'])) {
+            $data['attrs']['width'] = (int) $data['attrs']['width'];
+        }
+
         if (($data['type'] ?? null) === 'table' && isset($data['attrs']['layout'])) {
             $supportedLayouts = [
                 Table::LAYOUT_DEFAULT,
