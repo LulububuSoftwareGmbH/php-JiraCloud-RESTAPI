@@ -157,4 +157,36 @@ class AtlassianDocumentFormatTest extends TestCase
         $serialized = $result->jsonSerialize();
         $this->assertCount(0, $serialized['content']);
     }
+
+    public function testFromArrayPreservesTaskListAndTaskItemAttrs()
+    {
+        $adf = [
+            'version' => 1,
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'taskList',
+                    'attrs' => ['localId' => 'list-1'],
+                    'content' => [
+                        [
+                            'type' => 'taskItem',
+                            'attrs' => ['localId' => 'item-1', 'state' => 'TODO'],
+                            'content' => [
+                                ['type' => 'text', 'text' => 'Do the thing'],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $serialized = AtlassianDocumentFormat::fromArray($adf)->jsonSerialize();
+
+        $taskList = $serialized['content'][0];
+        $this->assertSame('list-1', $taskList['attrs']['localId']);
+
+        $taskItem = $taskList['content'][0];
+        $this->assertSame('item-1', $taskItem['attrs']['localId']);
+        $this->assertSame('TODO', $taskItem['attrs']['state']);
+    }
 }

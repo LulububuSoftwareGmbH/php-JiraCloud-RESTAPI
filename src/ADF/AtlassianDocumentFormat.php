@@ -19,6 +19,8 @@ class AtlassianDocumentFormat implements \JsonSerializable
 
     private Document|Node|null $document = null;
 
+    private ?array $rawAdf = null;
+
     public function __construct(Document|Node|string|null $document)
     {
         if (is_string($document)) {
@@ -33,6 +35,10 @@ class AtlassianDocumentFormat implements \JsonSerializable
     #[\ReturnTypeWillChange]
     public function jsonSerialize(): array
     {
+        if (null !== $this->rawAdf) {
+            return $this->rawAdf;
+        }
+
         return $this->document->jsonSerialize();
     }
 
@@ -54,7 +60,10 @@ class AtlassianDocumentFormat implements \JsonSerializable
         /** @var Document $document */
         $document = Document::load($adf);
 
-        return new self($document);
+        $instance = new self($document);
+        $instance->rawAdf = $adf;
+
+        return $instance;
     }
 
     private static function filterUnsupportedNodes(array $data): array
